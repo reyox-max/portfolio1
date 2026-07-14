@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>TigerChecks Portal</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0b0f1a;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+    }
+    header {
+      padding: 20px;
+      text-align: center;
+      background: #1a2333;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    main {
+      display: flex;
+      flex: 1;
+      overflow: hidden;
+    }
+    .sidebar {
+      width: 300px;
+      background: #111827;
+      padding: 20px;
+      border-left: 2px solid #2c2f3a;
+    }
+    .sidebar h2 {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+    .sidebar .ad-box {
+      background: #1f2937;
+      height: 250px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #aaa;
+      font-size: 0.9em;
+    }
+    .game-container {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .game-frame {
+      width: 100%;
+      max-width: 960px;
+      height: 540px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.6);
+      display: none;
+    }
+    .intro-card {
+      text-align: center;
+      background: #1a2333;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+    .intro-card button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      background: #ff4d4d;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .intro-card button:hover {
+      background: #ff1a1a;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>🐯 TigerChecks</h1>
+  </header>
+
+  <main>
+    <div class="game-container">
+      <div class="intro-card" id="introCard">
+        <p>Test your reflexes and pattern recognition in this fast-paced browser game.</p>
+        <button onclick="loadGame()">▶ Play Game</button>
+      </div>
+      <iframe id="gameFrame" class="game-frame"></iframe>
+    </div>
+
+    <aside class="sidebar">
+      <h2>Sponsored</h2>
+      <div class="ad-box">Ad Space 1</div>
+      <div class="ad-box">Ad Space 2</div>
+      <h2>Tips</h2>
+      <p>🧠 Match fast, avoid traps, and collect power-ups for bonus points!</p>
+    </aside>
+  </main>
+
+  <script>
+    function loadGame() {
+      const gameUrl = "https://raw.githubusercontent.com/whatthecrabby/games/main/TigerChecks.html";
+      fetch(gameUrl)
+        .then(res => res.text())
+        .then(html => {
+          const blob = new Blob([html], { type: "text/html" });
+          const blobUrl = URL.createObjectURL(blob);
+          document.getElementById('gameFrame').src = blobUrl;
+          document.getElementById('gameFrame').style.display = "block";
+          document.getElementById('introCard').style.display = "none";
+        })
+        .catch(err => {
+          alert("Failed to load game.");
+          console.error(err);
+        });
+    }
+  </script>
+</body>
+</html>
