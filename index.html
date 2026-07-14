@@ -15,24 +15,33 @@
 <body>
 
     <!-- Nav -->
-    <nav class="fixed top-0 w-full z-50 flex justify-center py-4">
-        <div class="bg-[#0a1024]/80 backdrop-blur-xl border border-white/10 rounded-full px-6 py-2 flex items-center gap-8">
-            <span class="font-unbounded font-bold text-sm">ROSHAN</span>
-            <div class="flex gap-6 text-sm opacity-80">
-                <a href="#home">Home</a><a href="#about">About</a><button class="dropbtn">Work</button>
-    <div class="dropdown-content">
-      <!-- Aerospace Engineering link -->
-      <a href="https://aero.roshan-giri.com.np">Aerospace Engineering</a>
-      <!-- Design links -->
-      <a href="design-project-1.html">UI/UX Design</a>
-      <a href="design-project-2.html">Graphic Design</a>
-    </div><a href="#journey">Journey</a><a href="#contact">Contact</a>
-                <a href="test-game.html">Games</a>
-            </div>
-            <button class="bg-[#7f7cff] px-4 py-1.5 rounded-full text-sm font-semibold">Hire Me</button>
+   <nav class="fixed top-0 w-full z-50 flex justify-center py-4">
+  <div class="bg-[#0a1024]/80 backdrop-blur-xl border border-white/10 rounded-full px-6 py-2 flex items-center gap-8">
+    <span class="font-unbounded font-bold text-sm">ROSHAN</span>
+    
+    <div class="flex gap-6 text-sm opacity-80 items-center">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      
+      <!-- Dropdown Container -->
+      <div class="relative group">
+        <button class="hover:text-white transition-colors">Work</button>
+        <!-- Dropdown Menu -->
+        <div class="absolute top-full left-0 mt-2 w-48 bg-[#0a1024]/90 backdrop-blur-md border border-white/10 rounded-xl py-2 hidden group-hover:block shadow-xl">
+          <a href="https://aero.roshan-giri.com.np" class="block px-4 py-2 hover:bg-white/10 transition-colors">Aerospace Engineering</a>
+          <a href="design-project-1.html" class="block px-4 py-2 hover:bg-white/10 transition-colors">UI/UX Design</a>
+          <a href="design-project-2.html" class="block px-4 py-2 hover:bg-white/10 transition-colors">Graphic Design</a>
         </div>
-    </nav>
+      </div>
 
+      <a href="#journey">Journey</a>
+      <a href="#contact">Contact</a>
+      <a href="test-game.html">Games</a>
+    </div>
+    
+    <button class="bg-[#7f7cff] px-4 py-1.5 rounded-full text-sm font-semibold">Hire Me</button>
+  </div>
+</nav>
     <!-- Hero -->
     <header id="home" class="h-screen flex flex-col items-center justify-center pt-20">
         <p class="font-kaushan text-8xl">Roshan Giri</p>
